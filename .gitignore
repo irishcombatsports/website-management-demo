@@ -1,0 +1,17 @@
+node_modules/
+backend/node_modules/
+frontend/node_modules/
+frontend/dist/
+backend/data/
+.env
+backend/.env
+frontend/.env
+scripts/.members-export.env
+scripts/member-export-settings.txt
+*.log
+*.db
+.DS_Store
+.claude/
+CLAUDE.md
+frontend/public/slideshow/
+frontend/public/partners/
