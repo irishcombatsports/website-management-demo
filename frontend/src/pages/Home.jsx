@@ -373,7 +373,7 @@ export default function Home() {
           <div className="rounded-lg border border-zinc-800 bg-zinc-950 overflow-hidden">
             <div className="border-b border-zinc-800 px-4 py-3 flex items-center justify-between">
               <p className="text-white font-semibold text-sm">Admin dashboard preview</p>
-              <Link to="/admin" className="text-xs font-semibold" style={{ color: theme.accent }}>Open admin</Link>
+              <Link to="/admin-demo" className="text-xs font-semibold" style={{ color: theme.accent }}>Open admin</Link>
             </div>
             <div className="grid sm:grid-cols-2 gap-3 p-4">
               {adminFeatures.map(feature => (

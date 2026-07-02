@@ -35,7 +35,7 @@ export default function Footer() {
               <li><a href="/#packages" className="text-zinc-400 hover:text-white text-sm transition-colors">Packages</a></li>
               <li><a href="/#admin-features" className="text-zinc-400 hover:text-white text-sm transition-colors">Admin Features</a></li>
               <li><a href="/#request" className="text-zinc-400 hover:text-white text-sm transition-colors">Request a Demo</a></li>
-              <li><Link to="/login" className="text-zinc-400 hover:text-white text-sm transition-colors">Admin Demo Login</Link></li>
+              <li><Link to="/admin-demo" className="text-zinc-400 hover:text-white text-sm transition-colors">Admin Demo</Link></li>
             </ul>
           </div>
         </div>

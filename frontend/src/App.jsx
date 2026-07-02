@@ -13,6 +13,7 @@ import Merch from './pages/Merch';
 import WaitingList from './pages/WaitingList';
 import Dashboard from './pages/Dashboard';
 import Admin from './pages/Admin';
+import AdminDemo from './pages/AdminDemo';
 import AdminSignIn from './pages/AdminSignIn';
 import Terms from './pages/Terms';
 import Privacy from './pages/Privacy';
@@ -30,6 +31,7 @@ export default function App() {
             <Route path="/schedule" element={<Schedule />} />
             <Route path="/merch" element={<Merch />} />
             <Route path="/waiting-list" element={<WaitingList />} />
+            <Route path="/admin-demo" element={<AdminDemo />} />
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/reset-password" element={<ResetPassword />} />
             <Route path="/terms" element={<Terms />} />

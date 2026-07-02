@@ -54,7 +54,7 @@ export default function Navbar() {
             </>
           ) : (
             <>
-              <Link to="/login" className="text-zinc-300 hover:text-white text-sm transition-colors">Admin Demo</Link>
+              <Link to="/admin-demo" className="text-zinc-300 hover:text-white text-sm transition-colors">Admin Demo</Link>
               <a href="/#request" className="btn-primary text-sm px-4 py-2">Request Demo</a>
             </>
           )}
@@ -99,7 +99,7 @@ export default function Navbar() {
             </>
           ) : (
             <>
-              <Link to="/login" onClick={() => setMenuOpen(false)} className="text-zinc-300 hover:text-white text-sm">Admin Demo</Link>
+              <Link to="/admin-demo" onClick={() => setMenuOpen(false)} className="text-zinc-300 hover:text-white text-sm">Admin Demo</Link>
               <a href="/#request" onClick={() => setMenuOpen(false)} className="btn-primary text-sm text-center">Request Demo</a>
             </>
           )}
