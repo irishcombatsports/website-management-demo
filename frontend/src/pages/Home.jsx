@@ -6,7 +6,7 @@ const packages = [
   {
     name: 'Starter Website',
     setup: '€199 setup',
-    monthly: '€9.99/month',
+    monthly: '€19.99/month',
     summary: 'A polished website that makes a small business look professional and easy to contact.',
     includes: [
       'Professional website',
@@ -21,7 +21,7 @@ const packages = [
   {
     name: 'Growth Management System',
     setup: '€299 setup',
-    monthly: '€19.99/month',
+    monthly: '€29.99/month',
     summary: 'Adds the database, admin tools and tracking small organisations need day to day.',
     includes: [
       'Everything in Starter',
