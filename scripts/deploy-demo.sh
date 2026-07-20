@@ -9,7 +9,16 @@ if [ -f "$HOME/.railway/env" ]; then
   source "$HOME/.railway/env"
 fi
 
-status_output="$(railway status)"
+set +e
+status_output="$(railway status 2>&1)"
+status_code=$?
+set -e
+
+if [ "$status_code" -ne 0 ] && ! printf '%s\n' "$status_output" | grep -q "Project ID:      $EXPECTED_PROJECT_ID"; then
+  printf '%s\n' "Refusing to deploy: Railway status could not confirm the expected project."
+  printf '%s\n' "$status_output"
+  exit 1
+fi
 
 if ! printf '%s\n' "$status_output" | grep -q "Project ID:      $EXPECTED_PROJECT_ID"; then
   printf '%s\n' "Refusing to deploy: this folder is not linked to the Website Management System Demo Railway project."
