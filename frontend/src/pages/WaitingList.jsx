@@ -81,7 +81,7 @@ export default function WaitingList() {
             </div>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} noValidate className="card space-y-4">
+          <form onSubmit={handleSubmit} noValidate className="card space-y-4" data-analytics-label="Waiting list signup">
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
                 <label className="label">Full name</label>

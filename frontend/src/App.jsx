@@ -3,6 +3,7 @@ import { AuthProvider } from './context/AuthContext';
 import { ProtectedRoute, AdminRoute } from './components/ProtectedRoute';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import AnalyticsProvider from './analytics/AnalyticsProvider';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -14,6 +15,7 @@ import WaitingList from './pages/WaitingList';
 import Dashboard from './pages/Dashboard';
 import Admin from './pages/Admin';
 import AdminDemo from './pages/AdminDemo';
+import AnalyticsDemo from './pages/AnalyticsDemo';
 import AdminSignIn from './pages/AdminSignIn';
 import Terms from './pages/Terms';
 import Privacy from './pages/Privacy';
@@ -32,6 +34,7 @@ export default function App() {
             <Route path="/merch" element={<Merch />} />
             <Route path="/waiting-list" element={<WaitingList />} />
             <Route path="/admin-demo" element={<AdminDemo />} />
+            <Route path="/analytics-demo" element={<AnalyticsDemo />} />
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/reset-password" element={<ResetPassword />} />
             <Route path="/terms" element={<Terms />} />
@@ -51,6 +54,7 @@ export default function App() {
           </Routes>
         </main>
         <Footer />
+        <AnalyticsProvider />
       </div>
     </AuthProvider>
   );

@@ -12,6 +12,7 @@ const contactRoutes = require('./routes/contact');
 const preorderRoutes = require('./routes/preorders');
 const settingsRoutes = require('./routes/settings');
 const waitingListRoutes = require('./routes/waitingList');
+const analyticsRoutes = require('./routes/analytics');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -68,6 +69,7 @@ app.use('/api/contact', contactRoutes);
 app.use('/api/preorders', preorderRoutes);
 app.use('/api/settings', settingsRoutes);
 app.use('/api/waiting-list', waitingListRoutes);
+app.use('/api/analytics', analyticsRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {

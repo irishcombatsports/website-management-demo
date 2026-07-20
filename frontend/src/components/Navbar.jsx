@@ -28,6 +28,7 @@ export default function Navbar() {
           <a href="/#demo-styles" className="text-zinc-400 hover:text-white text-sm transition-colors">Demo Styles</a>
           <a href="/#packages" className="text-zinc-400 hover:text-white text-sm transition-colors">Packages</a>
           <a href="/#admin-features" className="text-zinc-400 hover:text-white text-sm transition-colors">Admin Tools</a>
+          <Link to="/analytics-demo" className="text-zinc-400 hover:text-white text-sm transition-colors">Analytics</Link>
           <a href="/#request" className="text-zinc-400 hover:text-white text-sm transition-colors">Request</a>
         </nav>
 
@@ -54,8 +55,8 @@ export default function Navbar() {
             </>
           ) : (
             <>
-              <Link to="/admin-demo" className="text-zinc-300 hover:text-white text-sm transition-colors">Admin Demo</Link>
-              <a href="/#request" className="btn-primary text-sm px-4 py-2">Request Demo</a>
+              <Link to="/admin-demo" className="text-zinc-300 hover:text-white text-sm transition-colors" data-analytics-conversion="Admin demo click">Admin Demo</Link>
+              <a href="/#request" className="btn-primary text-sm px-4 py-2" data-analytics-conversion="Request demo click">Request Demo</a>
             </>
           )}
         </div>
@@ -84,6 +85,7 @@ export default function Navbar() {
           <a href="/#demo-styles" onClick={() => setMenuOpen(false)} className="text-zinc-300 hover:text-white text-sm">Demo Styles</a>
           <a href="/#packages" onClick={() => setMenuOpen(false)} className="text-zinc-300 hover:text-white text-sm">Packages</a>
           <a href="/#admin-features" onClick={() => setMenuOpen(false)} className="text-zinc-300 hover:text-white text-sm">Admin Tools</a>
+          <Link to="/analytics-demo" onClick={() => setMenuOpen(false)} className="text-zinc-300 hover:text-white text-sm">Analytics</Link>
           <a href="/#request" onClick={() => setMenuOpen(false)} className="text-zinc-300 hover:text-white text-sm">Request</a>
           {user ? (
             <>
@@ -99,8 +101,8 @@ export default function Navbar() {
             </>
           ) : (
             <>
-              <Link to="/admin-demo" onClick={() => setMenuOpen(false)} className="text-zinc-300 hover:text-white text-sm">Admin Demo</Link>
-              <a href="/#request" onClick={() => setMenuOpen(false)} className="btn-primary text-sm text-center">Request Demo</a>
+              <Link to="/admin-demo" onClick={() => setMenuOpen(false)} className="text-zinc-300 hover:text-white text-sm" data-analytics-conversion="Admin demo click">Admin Demo</Link>
+              <a href="/#request" onClick={() => setMenuOpen(false)} className="btn-primary text-sm text-center" data-analytics-conversion="Request demo click">Request Demo</a>
             </>
           )}
         </div>

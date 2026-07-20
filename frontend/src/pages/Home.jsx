@@ -128,7 +128,7 @@ function RequestForm({ theme }) {
   }
 
   return (
-    <form onSubmit={submit} className="space-y-3">
+    <form onSubmit={submit} className="space-y-3" data-analytics-label="Demo request form">
       <div className="grid sm:grid-cols-2 gap-3">
         <input className="input" placeholder="Your name" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} />
         <input className="input" type="email" placeholder="Email address" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} />
@@ -165,8 +165,8 @@ export default function Home() {
               Custom branding, sign-ups, bookings, memberships, payments and admin tools — all built from a proven system.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 mt-8">
-              <a href="#demo-styles" className="btn-primary">View Demo Options</a>
-              <a href="#request" className="btn-secondary">Request This Website</a>
+              <a href="#demo-styles" className="btn-primary" data-analytics-conversion="View demo options">View Demo Options</a>
+              <a href="#request" className="btn-secondary" data-analytics-conversion="Request website click">Request This Website</a>
             </div>
             <div className="grid grid-cols-3 gap-3 mt-8 max-w-xl">
               {['48-72h launch', 'Mobile first', 'Admin tools'].map(item => (

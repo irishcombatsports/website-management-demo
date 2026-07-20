@@ -124,7 +124,7 @@ export default function Merch() {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} noValidate className="space-y-4">
+              <form onSubmit={handleSubmit} noValidate className="space-y-4" data-analytics-label="Product enquiry form">
                 <div>
                   <p className="text-white font-bold text-lg mb-1">Voucher or equipment enquiry</p>
                   <p className="text-zinc-500 text-sm">No payment is taken here. This sends your interest to the club.</p>

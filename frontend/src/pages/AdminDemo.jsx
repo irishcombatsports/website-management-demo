@@ -43,8 +43,9 @@ export default function AdminDemo() {
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
+              <a href="/analytics-demo" className="btn-secondary" data-analytics-conversion="Analytics demo click">View Analytics</a>
               <a href="/#packages" className="btn-secondary">View Packages</a>
-              <a href="/#request" className="btn-primary">Request This System</a>
+              <a href="/#request" className="btn-primary" data-analytics-conversion="Request system click">Request This System</a>
             </div>
           </div>
         </div>

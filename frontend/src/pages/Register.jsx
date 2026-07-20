@@ -118,7 +118,7 @@ export default function Register() {
         </div>
 
         {step === 1 ? (
-          <form onSubmit={handleRegister} noValidate className="card space-y-4">
+          <form onSubmit={handleRegister} noValidate className="card space-y-4" data-analytics-label="Membership signup">
             <div>
               <label className="label">Full name</label>
               <input name="full_name" className="input" value={form.full_name} onChange={handleChange} autoComplete="name" />
@@ -152,7 +152,7 @@ export default function Register() {
             </p>
           </form>
         ) : (
-          <form onSubmit={handleWaiver} className="card space-y-5">
+          <form onSubmit={handleWaiver} className="card space-y-5" data-analytics-label="Waiver submission">
             <div className="bg-zinc-950 border border-zinc-700 rounded-lg p-4 h-64 overflow-y-auto">
               <p className="text-zinc-300 text-sm whitespace-pre-line leading-relaxed">{WAIVER_TEXT}</p>
             </div>

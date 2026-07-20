@@ -206,6 +206,43 @@ db.exec(`
 
   CREATE INDEX IF NOT EXISTS idx_waiting_list_status_created
     ON waiting_list (status, created_at);
+
+  CREATE TABLE IF NOT EXISTS analytics_events (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    visitor_id TEXT NOT NULL,
+    session_id TEXT NOT NULL,
+    type TEXT NOT NULL,
+    page_path TEXT NOT NULL,
+    page_title TEXT,
+    x REAL,
+    y REAL,
+    scroll_depth INTEGER,
+    element_tag TEXT,
+    element_text TEXT,
+    element_id TEXT,
+    element_classes TEXT,
+    device_type TEXT,
+    browser TEXT,
+    screen_width INTEGER,
+    screen_height INTEGER,
+    traffic_source TEXT,
+    conversion_name TEXT,
+    metadata TEXT,
+    created_at TEXT DEFAULT (datetime('now'))
+  );
+
+  CREATE INDEX IF NOT EXISTS idx_analytics_events_created
+    ON analytics_events (created_at);
+  CREATE INDEX IF NOT EXISTS idx_analytics_events_page_type
+    ON analytics_events (page_path, type);
+  CREATE INDEX IF NOT EXISTS idx_analytics_events_visitor
+    ON analytics_events (visitor_id, session_id);
+
+  CREATE TABLE IF NOT EXISTS analytics_settings (
+    key TEXT PRIMARY KEY,
+    value TEXT NOT NULL,
+    updated_at TEXT DEFAULT (datetime('now'))
+  );
 `);
 
 db.prepare(`
@@ -247,6 +284,22 @@ const insertSetting = db.prepare(`
   VALUES (?, ?)
 `);
 Object.entries(defaults).forEach(([key, value]) => insertSetting.run(key, value));
+
+const analyticsDefaults = {
+  tracking_enabled: 'true',
+  heatmaps_enabled: 'true',
+  cookie_consent_required: 'true',
+  anonymise_ip: 'true',
+  retention_days: '180',
+  session_recording_enabled: 'false',
+  weekly_email_reports: 'false',
+};
+
+const insertAnalyticsSetting = db.prepare(`
+  INSERT OR IGNORE INTO analytics_settings (key, value)
+  VALUES (?, ?)
+`);
+Object.entries(analyticsDefaults).forEach(([key, value]) => insertAnalyticsSetting.run(key, value));
 
 const placeholderUpdates = {
   club_name: ['Combat Club', 'Training Club'],
